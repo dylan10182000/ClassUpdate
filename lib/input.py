@@ -43,14 +43,12 @@ def get_config(config_filename):
     if "-y" not in flags and input(f"Use {q(profile)} profile? [Y/n]\t").lower() == "n":
         profile = input("Config profile name:\t\t")
         profile = try_user(raw_config, profile)
-        config_user = raw_config[profile]
-    else:
-        try:
-            config_user = raw_config[profile]
-        except KeyError:
-            print(ValueError(f'unknown profile: "{profile}"'))
-            sys.exit()
 
+    if profile not in raw_config:
+        print(ValueError(f'unknown profile: "{profile}"'))
+        sys.exit()
+
+    config_user = raw_config[profile]
     config = {
         "dir": config_user["ThemeDirectory"],
         "ext": config_user["FileExtension"],
