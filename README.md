@@ -34,7 +34,7 @@ Updating only a single file? Use SyndiShanX's online tool instead: https://syndi
     - See section below for detailed info
 3. Run the script
     - `cd ./ClassUpdate`
-    - `python ./replace.py`
+    - `python ./replace.py [config_profile] [-y]`
 
 ### Example
 Files marked with `↻` will be updated by the script if using the default config.
