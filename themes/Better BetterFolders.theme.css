@@ -1,0 +1,36 @@
+/**
+   * @name Better BetterFolders
+   * @author _kokussz_, catpurrrchino
+   * @version 2.0.0
+   * @description Improves the BetterFolders Icons and adds a name to the folder
+*/
+[class*=expandedFolderBackground_]~[class*=listItem_]:nth-child(2)>div:before {
+    content: attr(data-dnd-name);
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1px;
+    font-size: 10px;
+    color: #ffffff;
+    z-index: 1;
+    pointer-events: none;
+    width: 38px;
+    max-height: 27px;
+    text-align: center;
+    margin-left: -0.7px;
+    overflow: hidden;
+    letter-spacing: -0.2px;
+    line-height: 0.9;
+}
+
+[class*=expandedFolderIconWrapper_] svg {
+    width: 48px;
+    height: 48px;
+}
+
+[class*=folderIconWrapper_],
+[class*=folder_],
+[class*=collapsed_] {
+    background: none !important;
+}
